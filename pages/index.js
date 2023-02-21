@@ -1,7 +1,7 @@
 import Hero from "../components/homePage/Hero";
 import {Fragment} from "react";
 import FeaturedPosts from "../components/homePage/FeaturedPosts";
-import {getFeaturedPosts} from "../util/post-util";
+import {getFeaturedPosts} from "../lib/post-util";
 
 
 const HomePage = (props) => {

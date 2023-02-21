@@ -1,5 +1,5 @@
 import AllPosts from "../../components/posts/AllPosts";
-import {getAllPosts} from "../../util/post-util";
+import {getAllPosts} from "../../lib/post-util";
 
 const AllPostsPage = (props) => {
     return (
