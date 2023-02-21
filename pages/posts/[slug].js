@@ -1,8 +1,10 @@
+import PostContent from "../../components/posts/post-detail/PostContent";
+import {Fragment} from "react";
+
 const PostDetailPage = () => {
- return(
-     <div>
-         Hello
-     </div>
+ return( <Fragment>
+  <PostContent/>
+  </Fragment>
  )
 }
 

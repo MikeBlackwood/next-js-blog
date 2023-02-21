@@ -1,36 +1,15 @@
 import Hero from "../components/homePage/Hero";
 import {Fragment} from "react";
 import FeaturedPosts from "../components/homePage/FeaturedPosts";
+import {getFeaturedPosts} from "../util/post-util";
 
-const DUMMY_POSTS = [
-    {
-        slug: 'getting-started-nextjs',
-        title: 'Getting stated with next js',
-        image: 'getting-started-nextjs.png',
-        excerpt: 'Next JS - full-stack production dev',
-        date: '2023-02-20',
-    },
-    {
-        slug: 'getting-started-with-next-js2',
-        title: 'Getting stated with next js',
-        image: 'getting-started-nextjs.png',
-        excerpt: 'Next JS - full-stack production dev',
-        date: '2023-02-20',
-    }
-    ,    {
-        slug: 'getting-started-with-next-js3',
-        title: 'Getting stated with next js',
-        image: 'getting-started-nextjs.png',
-        excerpt: 'Next JS - full-stack production dev',
-        date: '2023-02-20',
-    }
-]
-const HomePage = () => {
+
+const HomePage = (props) => {
 
     return (
         <Fragment>
             <Hero/>
-            <FeaturedPosts posts={DUMMY_POSTS}/>
+            <FeaturedPosts posts={props.posts}/>
         </Fragment>
     )
 }
@@ -39,3 +18,14 @@ const HomePage = () => {
 // Featured Posts
 
 export default HomePage;
+
+export async function getStaticProps() {
+
+    const posts = getFeaturedPosts();
+
+    return {
+        props:{
+            posts
+        }
+    }
+}
